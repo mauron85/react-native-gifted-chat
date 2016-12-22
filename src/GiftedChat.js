@@ -9,7 +9,7 @@ import {
 
 import ActionSheet from '@exponent/react-native-action-sheet';
 import dismissKeyboard from 'react-native-dismiss-keyboard';
-import moment from 'moment/min/moment-with-locales.min';
+// import moment from 'moment/min/moment-with-locales.min';
 
 import InputToolbar from './InputToolbar';
 import MessageContainer from './MessageContainer';
@@ -103,7 +103,7 @@ export default class GiftedChat extends React.Component {
   }
 
   initLocale() {
-    if (this.props.locale === null || moment.locales().indexOf(this.props.locale) === -1) {
+    if (this.props.locale === null/* || moment.locales().indexOf(this.props.locale) === -1*/) {
       this.setLocale('en');
     } else {
       this.setLocale(this.props.locale);

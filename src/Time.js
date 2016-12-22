@@ -5,14 +5,16 @@ import {
   View,
 } from 'react-native';
 
-import moment from 'moment/min/moment-with-locales.min';
+// import moment from 'moment/min/moment-with-locales.min';
+import formatDate from 'date-fns/format';
 
 export default class Time extends React.Component {
   render() {
     return (
       <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
         <Text style={[styles[this.props.position].text, this.props.textStyle[this.props.position]]}>
-          {moment(this.props.currentMessage.createdAt).locale(this.context.getLocale()).format('LT')}
+          {/*moment(this.props.currentMessage.createdAt).locale(this.context.getLocale()).format('LT')*/}
+          {formatDate(this.props.currentMessage.createdAt, 'HH:mm')}
         </Text>
       </View>
     );
